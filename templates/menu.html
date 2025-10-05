@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню столовой - Школьный Веб-портал 1356</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Школьный Веб-портал 1356</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="menu.html">Меню столовой</a></li>
+                    <li><a href="changes.html">Замены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Меню столовой</h2>
+            <p>Здесь вы можете посмотреть меню школьной столовой на текущую неделю.</p>
+            
+            <div class="filters">
+                <form method="get" action="menu.html">
+                    <div class="form-group">
+                        <label for="day_filter">Выберите день недели:</label>
+                        <select id="day_filter" name="day_filter">
+                            <option value="all" selected>Все дни</option>
+                            <option value="Понедельник">Понедельник</option>
+                            <option value="Вторник">Вторник</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Применить фильтр</button>
+                </form>
+            </div>
+            
+            <div class="menu-meal">
+                <h3>Вторник</h3>
+                <div class="menu-meal">
+                    <h4>Завтрак</h4>
+                    <div class="meal-content">
+                        <ul>
+                            <li>🥖 Хлеб из муки пшеничной</li>
+                            <li>🍓 Варенье ягодное</li>
+                            <li>🍯 Каша гречневая с молоком</li>
+                            <li>🍋 Лимон (ломтик)</li>
+                            <li>🍬 Сахар порционный</li>
+                            <li>🍵 Чай/☕ Какао на молоке</li>
+                            <li>🥐 Круассан</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-meal">
+                    <h4>Обед</h4>
+                    <div class="meal-content">
+                        <ul>
+                            <li>🍞 Хлеб из муки пшеничной</li>
+                            <li>🍞 Хлеб ржано-пшеничный</li>
+                            <li>🥩 Говядина по-мексикански</li>
+                            <li>🍹 Чай / 🍓 Компот фруктовый/ягодный / 🍏 Напиток из сухофруктов</li>
+                            <li>🥗 Масло растительное</li>
+                            <li>🥒 Огурцы свежие</li>
+                            <li>🥬 Пекинская капуста</li>
+                            <li>🍅 Помидоры свежие</li>
+                            <li>🍬 Сахар порционный</li>
+                            <li>🍞 Гренки</li>
+                            <li>🍚 Рис отварной</li>
+                            <li>🍗 Бульон куриный с зеленью и яйцом / 🍲 Борщ Московский</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-meal">
+                <h3>Понедельник</h3>
+                <div class="menu-meal">
+                    <h4>Завтрак</h4>
+                    <div class="meal-content">
+                        <ul>
+                            <li>🥖 Хлеб из муки пшеничной</li>
+                            <li>🥞 Блинчики</li>
+                            <li>🍋 Лимон (ломтик)</li>
+                            <li>🥛 Молоко сгущенное с сахаром / 🍓 Варенье</li>
+                            <li>🍇 Ягодное / 🍑 Джем в ассортименте</li>
+                            <li>🍬 Сахар порционный</li>
+                            <li>🍵 Чай/☕ Какао на молоке</li>
+                            <li>🍊 Мандарины</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-meal">
+                    <h4>Обед</h4>
+                    <div class="meal-content">
+                        <ul>
+                            <li>🍞 Хлеб из муки пшеничной</li>
+                            <li>🍞 Хлеб ржано-пшеничный</li>
+                            <li>🍹 Чай / 🍓 Компот фруктовый/ягодный / 🍏 Напиток из сухофруктов</li>
+                            <li>🥗 Капуста свежая</li>
+                            <li>🧴 Масло растительное</li>
+                            <li>🥒 Огурцы свежие</li>
+                            <li>🍅 Помидоры свежие</li>
+                            <li>🍬 Сахар порционный</li>
+                            <li>🍲 Фрикадельки мясные</li>
+                            <li>🍞 Гренки</li>
+                            <li>🍛 Плов</li>
+                            <li>🍚 Гречка отварная рассыпчатая</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="filters">
+                <a href="edit_menu.html" class="button button-admin">Редактировать меню</a>
+            </div> -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Школьный Веб-портал 1356 &copy; 2025 | made by "1356ПРАВДА"</p>
+        </div>
+    </footer>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

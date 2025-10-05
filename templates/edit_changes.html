@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование замен в расписании - Школьный Веб-портал 1356</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Школьный Веб-портал 1356</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="menu.html">Меню столовой</a></li>
+                    <li><a href="changes.html">Замены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Редактирование замен в расписании</h2>
+            <p>Здесь вы можете добавлять, изменять и удалять замены в расписании занятий.</p>
+            
+            <div class="edit-section">
+                <h3>Добавить новую замену</h3>
+                <form method="post" action="edit_changes.html">
+                    <input type="hidden" name="action" value="add">
+                    <div class="edit-forms">
+                        <div class="form-group">
+                            <label for="date">Дата:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="class_name">Класс:</label>
+                            <input type="text" id="class_name" name="class_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lesson_number">Номер урока:</label>
+                            <input type="number" id="lesson_number" name="lesson_number" min="1" max="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="original_subject">Было (предмет):</label>
+                            <input type="text" id="original_subject" name="original_subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="original_teacher">Было (учитель):</label>
+                            <input type="text" id="original_teacher" name="original_teacher" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new_subject">Стало (предмет):</label>
+                            <input type="text" id="new_subject" name="new_subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new_teacher">Стало (учитель):</label>
+                            <input type="text" id="new_teacher" name="new_teacher" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Примечание:</label>
+                            <input type="text" id="notes" name="notes">
+                        </div>
+                    </div>
+                    <button type="submit" class="button button-success">Добавить замену</button>
+                </form>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Текущие замены (Пример)</h3>
+                
+                <div class="filters">
+                    <form method="get" action="edit_changes.html">
+                        <div class="form-group">
+                            <label for="date_filter">Дата:</label>
+                            <select id="date_filter" name="date_filter">
+                                <option value="all" selected>Все даты</option>
+                                <option value="2025-10-15">15.10.2025</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="class_filter">Класс:</label>
+                            <select id="class_filter" name="class_filter">
+                                <option value="all" selected>Все классы</option>
+                                <option value="9А">9А</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="button">Применить фильтр</button>
+                    </form>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Класс</th>
+                            <th>Урок</th>
+                            <th>Было (предмет)</th>
+                            <th>Было (учитель)</th>
+                            <th>Стало (предмет)</th>
+                            <th>Стало (учитель)</th>
+                            <th>Примечание</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="format-date" data-date="2025-10-15">15.10.2025</td>
+                            <td>9А</td>
+                            <td>3</td>
+                            <td>Русский язык</td>
+                            <td>Иванова А.К.</td>
+                            <td>Литература</td>
+                            <td>Петрова С.Л.</td>
+                            <td>Учитель на больничном</td>
+                            <td>
+                                <form method="post" action="edit_changes.html" class="delete-confirm">
+                                    <input type="hidden" name="action" value="delete">
+                                    <input type="hidden" name="index" value="0">
+                                    <button type="submit" class="button button-danger">Удалить</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="format-date" data-date="2025-10-16">16.10.2025</td>
+                            <td>10Б</td>
+                            <td>5</td>
+                            <td>Физика</td>
+                            <td>Смирнов О.В.</td>
+                            <td>Астрономия</td>
+                            <td>Смирнов О.В.</td>
+                            <td>-</td>
+                            <td>
+                                <form method="post" action="edit_changes.html" class="delete-confirm">
+                                    <input type="hidden" name="action" value="delete">
+                                    <input type="hidden" name="index" value="1">
+                                    <button type="submit" class="button button-danger">Удалить</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Школьный Веб-портал 1356 &copy; 2025 | made by "1356ПРАВДА"</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

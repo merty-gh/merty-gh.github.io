@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование расписания - Школьный Веб-портал 1356</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Школьный Веб-портал 1356</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="menu.html">Меню столовой</a></li>
+                    <li><a href="changes.html">Замены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Редактирование расписания</h2>
+            <p>Здесь вы можете добавлять, изменять и удалять записи в расписании занятий.</p>
+            
+            <div class="edit-section">
+                <h3>Добавить новую запись</h3>
+                <form method="post" action="edit_schedule.html">
+                    <input type="hidden" name="action" value="add">
+                    <div class="edit-forms">
+                        <div class="form-group">
+                            <label for="class_name">Класс:</label>
+                            <input type="text" id="class_name" name="class_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="day_of_week">День недели:</label>
+                            <select id="day_of_week" name="day_of_week" required>
+                                <option value="Понедельник">Понедельник</option>
+                                <option value="Вторник">Вторник</option>
+                                <option value="Среда">Среда</option>
+                                <option value="Четверг">Четверг</option>
+                                <option value="Пятница">Пятница</option>
+                                <option value="Суббота">Суббота</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="lesson_number">Номер урока:</label>
+                            <input type="number" id="lesson_number" name="lesson_number" min="1" max="10" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Предмет:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="teacher">Учитель:</label>
+                            <input type="text" id="teacher" name="teacher" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="classroom">Кабинет:</label>
+                            <input type="text" id="classroom" name="classroom" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="button button-success">Добавить запись</button>
+                </form>
+            </div>
+            
+            <div class="edit-section">
+                <h3>Текущее расписание (Нажмите "Применить фильтр" для фильтрации)</h3>
+                
+                <div class="filters">
+                    <form method="get" action="edit_schedule.html">
+                        <div class="form-group">
+                            <label for="class_filter">Класс:</label>
+                            <select id="class_filter" name="class_filter">
+                                <option value="all" selected>Все классы</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="day_filter">День недели:</label>
+                            <select id="day_filter" name="day_filter">
+                                <option value="all" selected>Все дни</option>
+                                </select>
+                        </div>
+                        <button type="submit" class="button">Применить фильтр</button>
+                    </form>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Класс</th>
+                            <th>День недели</th>
+                            <th>Урок</th>
+                            <th>Предмет</th>
+                            <th>Учитель</th>
+                            <th>Кабинет</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>8Б</td><td>Понедельник</td><td>7</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="0"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>1</td><td>РОВ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="1"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>2</td><td>История</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="2"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>3</td><td>Физика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="3"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>4</td><td>Биология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="4"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>5</td><td>Технология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="5"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Понедельник</td><td>6</td><td>Алгебра</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="6"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>1</td><td>Геометрия</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="7"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>2</td><td>История</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="8"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>4</td><td>Химия</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="9"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>3</td><td>ОБЗР</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="10"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>5</td><td>Биология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="11"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>6</td><td>Математический практикум</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="12"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Вторник</td><td>7</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="13"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>1</td><td>Алгебра</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="14"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>2</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="15"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>3</td><td>Обществознание</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="16"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>4</td><td>Орфографический практикум</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="17"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>5</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="18"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>6</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="19"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>7</td><td>Музыка</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="20"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Среда</td><td>8</td><td>ВД _ по Физике</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="21"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>1</td><td>ТВИС</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="22"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>2</td><td>Геометрия</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="23"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>3</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="24"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>4</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="25"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>5</td><td>Химия</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="26"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>6</td><td>Биология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="27"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Четверг</td><td>7</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="28"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>1</td><td>Физика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="29"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>2</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="30"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>3</td><td>Геометрия</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="31"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>4</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="32"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>5</td><td>Обществознание</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="33"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>6</td><td>Информатика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="34"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Пятница</td><td>7</td><td>ВД _ по Информатике</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="35"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Суббота</td><td>1</td><td>Алгебра</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="36"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Суббота</td><td>2</td><td>Немецкий/Французский/Испанский</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="37"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Суббота</td><td>3</td><td>ОБЖ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="38"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8Б</td><td>Суббота</td><td>4</td><td>ИЗО</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="39"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>1</td><td>РОВ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="40"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>2</td><td>Технология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="41"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>3</td><td>Алгебра</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="42"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>4</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="43"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>5</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="44"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>6</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="45"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>8А</td><td>Понедельник</td><td>7</td><td>ВД _ НТВЛ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="46"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>1</td><td>РОВ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="47"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>2</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="48"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>3</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="49"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>4</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="50"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>5</td><td>Немецкий/Французский/Испанский</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="51"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Понедельник</td><td>6</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="52"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Вторник</td><td>1</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="53"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Вторник</td><td>2</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="54"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Вторник</td><td>3</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="55"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Вторник</td><td>4</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="56"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Вторник</td><td>5</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="57"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>1</td><td>История</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="58"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>2</td><td>ИЗО</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="59"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>3</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="60"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>4</td><td>ОДНКНР</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="61"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>5</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="62"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Среда</td><td>6</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="63"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>1</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="64"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>2</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="65"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>3</td><td>Музыка</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="66"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>4</td><td>Биология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="67"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>5</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="68"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>6</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="69"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Четверг</td><td>7</td><td>ВД _ Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="70"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>1</td><td>Немецкий/Французский/Испанский</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="71"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>2</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="72"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>3</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="73"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>4</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="74"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>5</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="75"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5Б</td><td>Пятница</td><td>6</td><td>Технология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="76"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>1</td><td>РОВ</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="77"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>2</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="78"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>3</td><td>История</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="79"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>4</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="80"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>5</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="81"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Понедельник</td><td>6</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="82"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>1</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="83"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>2</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="84"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>3</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="85"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>4</td><td>Музыка</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="86"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>5</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="87"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Вторник</td><td>6</td><td>Технология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="88"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>1</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="89"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>2</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="90"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>3</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="91"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>4</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="92"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>5</td><td>Немецкий/Французский/Испанский</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="93"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Среда</td><td>6</td><td>ОДНКНР</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="94"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>1</td><td>История</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="95"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>2</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="96"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>3</td><td>Математика</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="97"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>4</td><td>Биология</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="98"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>5</td><td>Физическая культура</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="99"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Четверг</td><td>6</td><td>ВД _ Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="100"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Пятница</td><td>1</td><td>Английский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="101"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Пятница</td><td>2</td><td>Русский язык</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="102"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Пятница</td><td>3</td><td>Литература</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="103"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Пятница</td><td>4</td><td>География</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="104"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                        <tr><td>5А</td><td>Пятница</td><td>5</td><td>ИЗО</td><td>Н/Д</td><td>Н/Д</td><td><form method="post" action="edit_schedule.html" class="delete-confirm"><input type="hidden" name="action" value="delete"><input type="hidden" name="index" value="105"><button type="submit" class="button button-danger">Удалить</button></form></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Школьный Веб-портал 1356 &copy; 2025 | made by "1356ПРАВДА"</p>
+        </div>
+    </footer>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

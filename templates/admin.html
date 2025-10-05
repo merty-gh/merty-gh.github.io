@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель администратора - Школьный Веб-портал 1356</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Школьный Веб-портал 1356</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="menu.html">Меню столовой</a></li>
+                    <li><a href="changes.html">Замены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Панель администратора</h2>
+            <p>Введите пароль для доступа к панели администратора.</p>
+            
+            <form method="post" action="admin.html">
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="button button-admin">Войти</button>
+            </form>
+            
+            <p style="margin-top: 20px;">
+                <a href="edit_schedule.html" class="button">Редактировать расписание</a>
+                <a href="edit_menu.html" class="button">Редактировать меню</a>
+                <a href="edit_changes.html" class="button">Редактировать замены</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Школьный Веб-портал 1356 &copy; 2025 | made by "1356ПРАВДА"</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замены в расписании - Школьный Веб-портал 1356</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Школьный Веб-портал 1356</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                    <li><a href="menu.html">Меню столовой</a></li>
+                    <li><a href="changes.html">Замены</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Замены в расписании</h2>
+            <p>Здесь вы можете посмотреть актуальные замены в расписании занятий.</p>
+            
+            <div class="filters">
+                <form method="get" action="changes.html">
+                    <div class="form-group">
+                        <label for="date_filter">Выберите дату:</label>
+                        <select id="date_filter" name="date_filter">
+                            <option value="all" selected>Все даты</option>
+                            <option value="2024-01-20">2024-01-20</option>
+                            <option value="2025-03-10">2025-03-10</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="class_filter">Выберите класс:</label>
+                        <select id="class_filter" name="class_filter">
+                            <option value="all" selected>Все классы</option>
+                            <option value="5А">5А</option>
+                            <option value="10А">10А</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Применить фильтр</button>
+                </form>
+            </div>
+            
+            <div class="info-message">
+                <h3>Замены на <span class="format-date" data-date="2024-01-20">2024-01-20</span></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Класс</th>
+                            <th>Урок</th>
+                            <th>Было (Предмет, Учитель, Кабинет)</th>
+                            <th>Стало (Предмет, Учитель, Кабинет)</th>
+                            <th>Примечание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5А</td>
+                            <td>3</td>
+                            <td>Урок (Иванова А.П.), Каб: 201</td>
+                            <td>Урок (Петрова М.С.), Каб: 305</td>
+                            <td>Н/Д</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="info-message">
+                <h3>Замены на <span class="format-date" data-date="2025-03-10">2025-03-10</span></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Класс</th>
+                            <th>Урок</th>
+                            <th>Было (Предмет, Учитель, Кабинет)</th>
+                            <th>Стало (Предмет, Учитель, Кабинет)</th>
+                            <th>Примечание</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10А</td>
+                            <td>1</td>
+                            <td>Урок (cc), Каб: 12</td>
+                            <td>Урок (dd), Каб: 13</td>
+                            <td>Н/Д</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="filters">
+                <a href="edit_changes.html" class="button button-admin">Редактировать замены</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Школьный Веб-портал 1356 &copy; 2025 | made by "1356ПРАВДА"</p>
+        </div>
+    </footer>
+
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
