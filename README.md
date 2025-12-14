@@ -1,1 +1,1 @@
-# merty-gh-merty-gh.github.io
+# merty-gh.github.io
