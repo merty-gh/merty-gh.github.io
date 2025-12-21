@@ -1980,81 +1980,81 @@
         </div>
         <div id="page-profile" class="page">
           <div class="flex items-center justify-between mb-6">
-              <h1 class="text-2xl font-bold">Профиль</h1>
+            <h1 class="text-2xl font-bold">Профиль</h1>
           </div>
-      
-          <div class="bg-card rounded-2xl p-6 border border-border/50 shadow-sm mb-6 text-center">
-              <div class="relative inline-block mb-4">
-                  <div id="profile-avatar-container" class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20 overflow-hidden mx-auto">
-                      <img id="profile-avatar" src="" alt="" class="w-full h-full object-cover hidden" />
-                      <span id="profile-avatar-fallback" class="text-2xl font-bold text-primary">U</span>
-                  </div>
+        
+          <div class="bg-card rounded-2xl p-6 border border-border/50 shadow-sm mb-4 text-center">
+            <div class="relative inline-block mb-4">
+              <div id="profile-avatar-container" class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20 overflow-hidden mx-auto">
+                <img id="profile-avatar" src="" alt="" class="w-full h-full object-cover hidden" />
+                <span id="profile-avatar-fallback" class="text-2xl font-bold text-primary">U</span>
               </div>
-              <h2 id="profile-name" class="text-xl font-bold mb-1">Загрузка...</h2>
-              <p id="profile-id" class="text-xs text-muted mb-4">ID: ---</p>
-      
-              <div class="card bg-primary/5 border-primary/20 mt-4 text-left">
-                  <div class="card-content space-y-3 p-4">
-                      <div class="flex items-center gap-2 text-primary font-bold">
-                          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
-                          <h3 class="text-sm">Пригласи друга</h3>
-                      </div>
-                      <p class="text-[11px] text-muted leading-tight">
-                          Получите бонусы за каждого друга, который воспользуется ботом по вашей ссылке.
-                      </p>
-                      <div class="flex gap-2">
-                          <div class="flex-1 bg-background border border-border/50 rounded-md px-3 py-2 text-[10px] font-mono text-primary flex items-center justify-between overflow-hidden">
-                              <span id="ref-link-text" class="truncate">Загрузка...</span>
-                          </div>
-                          <button onclick="copyRefLink()" class="btn btn-primary h-9 px-3 shrink-0 rounded-md shadow-sm">
-                              <span id="copy-btn-text">Копировать</span>
-                          </button>
-                      </div>
-                  </div>
-              </div>
+            </div>
+            <h2 id="profile-name" class="text-xl font-bold mb-1">Загрузка...</h2>
+            <p id="profile-id" class="text-xs text-muted">ID: ---</p>
           </div>
-      
+        
+          <div class="card bg-primary/5 border-primary/20 mb-6">
+            <div class="card-content space-y-3 p-4">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <h3 class="text-sm">Пригласи друга</h3>
+              </div>
+              <p class="text-[11px] text-muted leading-tight">
+                Получите бонусы за каждого друга, который воспользуется ботом по вашей ссылке.
+              </p>
+              <div class="flex gap-2">
+                <div class="flex-1 bg-background border border-border/50 rounded-md px-3 py-2 text-[10px] font-mono text-primary flex items-center justify-between overflow-hidden">
+                  <span id="ref-link-text" class="truncate">Загрузка...</span>
+                </div>
+                <button onclick="copyRefLink()" class="btn btn-primary h-9 px-3 shrink-0 rounded-md shadow-sm text-xs">
+                  <span id="copy-btn-text">Копировать</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        
           <div class="space-y-4 mb-6">
-              <div class="flex items-center justify-between">
-                  <h3 class="font-bold text-lg">Мои реквизиты</h3>
-                  <button class="btn btn-ghost btn-sm h-8 text-xs text-primary">Сохранить</button>
+            <div class="flex items-center justify-between px-1">
+              <h3 class="font-bold text-lg">Мои реквизиты</h3>
+              <button class="btn btn-ghost btn-sm h-8 text-xs text-primary">Сохранить</button>
+            </div>
+            <div class="grid gap-3 p-4 bg-card rounded-xl border border-border/50">
+              <div class="space-y-1">
+                <label class="text-xs text-muted">ИНН</label>
+                <input type="text" placeholder="Введите ИНН" class="input h-9 bg-secondary/20" />
               </div>
-              <div class="grid gap-3 p-4 bg-card rounded-xl border border-border/50">
-                  <div class="space-y-1">
-                      <label class="text-xs text-muted">ИНН</label>
-                      <input type="text" value="7729123456" class="input h-9 bg-secondary/20" />
-                  </div>
-                  <div class="space-y-1">
-                      <label class="text-xs text-muted">Расчетный счет</label>
-                      <input type="text" value="40802810000000001234" class="input h-9 bg-secondary/20" />
-                  </div>
-                  <div class="space-y-1">
-                      <label class="text-xs text-muted">Адрес</label>
-                      <input type="text" value="г. Москва, ул. Ленина, д. 1" class="input h-9 bg-secondary/20" />
-                  </div>
+              <div class="space-y-1">
+                <label class="text-xs text-muted">Расчетный счет</label>
+                <input type="text" placeholder="Введите счет" class="input h-9 bg-secondary/20" />
               </div>
-          </div>
-      
-          <div class="space-y-3" id="profile-history-block" style="display: none">
-              <div class="flex items-center justify-between">
-                  <h3 class="font-bold text-lg">История</h3>
-                  <button id="profile-history-show-all-btn" class="btn btn-ghost btn-sm h-8 text-xs">Все</button>
+              <div class="space-y-1">
+                <label class="text-xs text-muted">Адрес</label>
+                <input type="text" placeholder="Ваш адрес" class="input h-9 bg-secondary/20" />
               </div>
-              <div class="space-y-2" id="profile-history-list"></div>
+            </div>
           </div>
-      
-          <div class="space-y-1 pt-2 pb-8">
-              <button class="btn btn-ghost btn-full justify-start h-12 font-normal">
-                  <svg class="mr-3 h-5 w-5 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="3" />
-                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" />
-                  </svg>
-                  Настройки
-              </button>
+        
+          <div class="space-y-3 mb-6" id="profile-history-block" style="display: none">
+            <div class="flex items-center justify-between px-1">
+              <h3 class="font-bold text-lg">История</h3>
+              <button id="profile-history-show-all-btn" class="btn btn-ghost btn-sm h-8 text-xs">Все</button>
+            </div>
+            <div class="space-y-2" id="profile-history-list"></div>
           </div>
-      </div>
+        
+          <div class="space-y-2 pb-10">
+            <button class="btn btn-ghost btn-full justify-start h-12 font-normal bg-card/50 border border-border/40">
+              <svg class="mr-3 h-5 w-5 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+              </svg>
+              Настройки
+            </button>
+          </div>
+        </div>
         <div id="page-not-found" class="page">
           <div
             class="min-h-screen w-full flex items-center justify-center bg-gray-50"
