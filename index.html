@@ -1979,80 +1979,211 @@
           </div>
         </div>
         <div id="page-profile" class="page">
-          <div class="flex items-center justify-between mb-6">
-            <h1 class="text-2xl font-bold">Профиль</h1>
-          </div>
-        
-          <div class="bg-card rounded-2xl p-6 border border-border/50 shadow-sm mb-4 text-center">
-            <div class="relative inline-block mb-4">
-              <div id="profile-avatar-container" class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20 overflow-hidden mx-auto">
-                <img id="profile-avatar" src="" alt="" class="w-full h-full object-cover hidden" />
-                <span id="profile-avatar-fallback" class="text-2xl font-bold text-primary">U</span>
+          <div class="container space-y-6">
+            <div
+              class="flex items-center gap-4 bg-card p-4 rounded-xl border border-border/50 shadow-sm"
+            >
+              <div
+                class="rounded-full w-16 h-16 border-2 border-primary/20 flex items-center justify-center bg-primary/10 text-primary font-bold overflow-hidden"
+              >
+                <img
+                  id="profile-avatar"
+                  src=""
+                  alt="Аватар"
+                  class="w-full h-full object-cover hidden"
+                />
+                <span id="profile-avatar-fallback">AI</span>
+              </div>
+              <div class="flex-1">
+                <h2 id="profile-name" class="font-bold text-lg">
+                  Пользователь
+                </h2>
+                <div class="flex items-center gap-2 mt-1">
+                  <span
+                    class="badge badge-outline font-normal text-muted bg-secondary/50"
+                    >Free Plan</span
+                  ><span id="profile-id" class="text-xs text-muted">ID: -</span>
+                </div>
               </div>
             </div>
-            <h2 id="profile-name" class="text-xl font-bold mb-1">Загрузка...</h2>
-            <p id="profile-id" class="text-xs text-muted">ID: ---</p>
-          </div>
-        
-          <div class="card bg-primary/5 border-primary/20 mb-6">
-            <div class="card-content space-y-3 p-4">
-              <div class="flex items-center gap-2 text-primary font-bold">
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                <h3 class="text-sm">Пригласи друга</h3>
-              </div>
-              <p class="text-[11px] text-muted leading-tight">
-                Получите бонусы за каждого друга, который воспользуется ботом по вашей ссылке.
-              </p>
-              <div class="flex gap-2">
-                <div class="flex-1 bg-background border border-border/50 rounded-md px-3 py-2 text-[10px] font-mono text-primary flex items-center justify-between overflow-hidden">
-                  <span id="ref-link-text" class="truncate">Загрузка...</span>
+            <div
+              class="card bg-gradient-to-r from-slate-900 to-slate-800 text-white border-none"
+            >
+              <div class="card-content flex justify-between items-center">
+                <div>
+                  <p class="font-medium text-sm text-slate-300">Подписка</p>
+                  <p class="font-bold">Бесплатный тариф</p>
                 </div>
-                <button onclick="copyRefLink()" class="btn btn-primary h-9 px-3 shrink-0 rounded-md shadow-sm text-xs">
-                  <span id="copy-btn-text">Копировать</span>
+                <a href="#" data-route="/premium"
+                  ><button
+                    class="btn btn-sm bg-white text-slate-900 hover:bg-slate-100 font-semibold"
+                  >
+                    Улучшить
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-lg">Мои реквизиты</h3>
+                <button class="btn btn-ghost btn-sm h-8 text-xs text-primary">
+                  Сохранить
                 </button>
               </div>
-            </div>
-          </div>
-        
-          <div class="space-y-4 mb-6">
-            <div class="flex items-center justify-between px-1">
-              <h3 class="font-bold text-lg">Мои реквизиты</h3>
-              <button class="btn btn-ghost btn-sm h-8 text-xs text-primary">Сохранить</button>
-            </div>
-            <div class="grid gap-3 p-4 bg-card rounded-xl border border-border/50">
-              <div class="space-y-1">
-                <label class="text-xs text-muted">ИНН</label>
-                <input type="text" placeholder="Введите ИНН" class="input h-9 bg-secondary/20" />
+              <div
+                class="grid gap-3 p-4 bg-card rounded-xl border border-border/50"
+              >
+                <div class="space-y-1">
+                  <label class="text-xs text-muted">ИНН</label
+                  ><input
+                    type="text"
+                    value="7729123456"
+                    class="input h-9 bg-secondary/20"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs text-muted">Расчетный счет</label
+                  ><input
+                    type="text"
+                    value="40802810000000001234"
+                    class="input h-9 bg-secondary/20"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs text-muted">Адрес</label
+                  ><input
+                    type="text"
+                    value="г. Москва, ул. Ленина, д. 1"
+                    class="input h-9 bg-secondary/20"
+                  />
+                </div>
               </div>
-              <div class="space-y-1">
-                <label class="text-xs text-muted">Расчетный счет</label>
-                <input type="text" placeholder="Введите счет" class="input h-9 bg-secondary/20" />
+            </div>
+            <div
+              class="space-y-3"
+              id="profile-history-block"
+              style="display: none"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-lg">История</h3>
+                <button
+                  id="profile-history-show-all-btn"
+                  class="btn btn-ghost btn-sm h-8 text-xs"
+                >
+                  Все
+                </button>
               </div>
-              <div class="space-y-1">
-                <label class="text-xs text-muted">Адрес</label>
-                <input type="text" placeholder="Ваш адрес" class="input h-9 bg-secondary/20" />
+              <div class="space-y-2" id="profile-history-list"></div>
+            </div>
+            <div class="card bg-primary/5 border-primary/20">
+              <div class="card-content space-y-3">
+                <div class="flex items-center gap-2 text-primary font-bold">
+                  <svg
+                    class="h-5 w-5"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    />
+                  </svg>
+                  <h3>Пригласи друга</h3>
+                </div>
+                <p class="text-sm text-muted">
+                  Получите 1 месяц Premium бесплатно за каждого друга.
+                </p>
+                <div class="flex gap-2">
+                  <div
+                    class="flex-1 bg-background border border-border/50 rounded-md px-3 py-2 text-xs font-mono text-muted flex items-center justify-between"
+                  >
+                    <span id="ref-link-text">t.me/docgen_bot?start=ref123</span
+                    ><svg
+                      class="h-3 w-3 cursor-pointer hover:text-foreground"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      />
+                    </svg>
+                  </div>
+                  <button class="btn btn-icon h-9 w-9 shrink-0">
+                    <svg
+                      class="h-4 w-4"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="18" cy="5" r="3" />
+                      <circle cx="6" cy="12" r="3" />
+                      <circle cx="18" cy="19" r="3" />
+                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        
-          <div class="space-y-3 mb-6" id="profile-history-block" style="display: none">
-            <div class="flex items-center justify-between px-1">
-              <h3 class="font-bold text-lg">История</h3>
-              <button id="profile-history-show-all-btn" class="btn btn-ghost btn-sm h-8 text-xs">Все</button>
+            <div class="space-y-1 pt-2 pb-8">
+              <button
+                class="btn btn-ghost btn-full justify-start h-12 font-normal"
+              >
+                <svg
+                  class="mr-3 h-5 w-5 text-muted"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path
+                    d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"
+                  />
+                </svg>
+                Настройки<svg
+                  class="ml-auto h-4 w-4 text-muted"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg></button
+              ><button
+                class="btn btn-ghost btn-full justify-start h-12 font-normal text-red-500 hover:text-red-600 hover:bg-red-50"
+              >
+                <svg
+                  class="mr-3 h-5 w-5"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                  <polyline points="16 17 21 12 16 7" />
+                  <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                Выйти
+              </button>
             </div>
-            <div class="space-y-2" id="profile-history-list"></div>
-          </div>
-        
-          <div class="space-y-2 pb-10">
-            <button class="btn btn-ghost btn-full justify-start h-12 font-normal bg-card/50 border border-border/40">
-              <svg class="mr-3 h-5 w-5 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" />
-              </svg>
-              Настройки
-            </button>
           </div>
         </div>
         <div id="page-not-found" class="page">
@@ -2315,14 +2446,6 @@
         if (profileName) profileName.textContent = `${firstName} ${lastName}`.trim() || username || "Пользователь";
         if (profileId) profileId.textContent = `ID: ${user.id}`;
 
-        // ГЕНЕРАЦИЯ РЕФ ССЫЛКИ
-        const refLinkInput = document.getElementById("ref-link-input");
-        if (refLinkInput) {
-            // Замените ProDocsSystemBot на имя вашего бота из BotFather
-            const botUsername = "testProDocsSystem_bot"; 
-            refLinkInput.value = `https://t.me/${botUsername}?start=${user.id}`;
-        }
-
         // 2. Логика Аватара (Фото или Буква)
         // Функция для обновления конкретной пары (img + fallback text)
         const setAvatar = (imgId, fallbackId) => {
@@ -2353,19 +2476,6 @@
         setAvatar("profile-avatar", "profile-avatar-fallback");
       }
 
-      // ФУНКЦИЯ КОПИРОВАНИЯ
-    function copyRefLink() {
-        const copyText = document.getElementById("ref-link-input");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); // Для мобильных
-
-        navigator.clipboard.writeText(copyText.value).then(() => {
-            const btn = event.target;
-            const originalText = btn.textContent;
-            btn.textContent = "✅";
-            setTimeout(() => { btn.textContent = originalText; }, 2000);
-        });
-    }
       
       function getRecentStorageKey() {
         const user = getCurrentUser();
