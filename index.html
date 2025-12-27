@@ -2005,20 +2005,17 @@
         const refCountNumber = document.getElementById("ref-count-number");
         if (!refCountNumber) return;
 
-        // 1. Получаем параметры из URL (адресной строки)
-        const urlParams = new URLSearchParams(window.location.search);
+        // Вместо цифры выводим текст-ссылку
+        // ЗАМЕНИТЕ ProDocSystems_bot на юзернейм вашего бота без @
+        const botUsername = "testProDocsSystem_bot"; 
         
-        // 2. Ищем параметр 'count'
-        const countFromUrl = urlParams.get('count');
-
-        // 3. Если нашли - показываем, если нет - пишем 0
-        if (countFromUrl) {
-            refCountNumber.textContent = countFromUrl;
-            console.log("Рефералы загружены из ссылки:", countFromUrl);
-        } else {
-            refCountNumber.textContent = "0";
-        }
-      }
+        refCountNumber.innerHTML = `
+            <a href="https://t.me/${botUsername}?start=ref_status" 
+              style="color: #007aff; text-decoration: underline; font-size: 14px;">
+              Узнать количество
+            </a>
+        `;
+    }
 
       function getRecentStorageKey() {
         const user = getCurrentUser();
