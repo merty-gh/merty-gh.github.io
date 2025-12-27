@@ -2001,50 +2001,22 @@
         loadReferralCount(user.id);
       }
 
-      // Функция для загрузки количества рефералов
-      async function loadReferralCount(userId) {
+      function loadReferralCount() {
         const refCountNumber = document.getElementById("ref-count-number");
         if (!refCountNumber) return;
 
-        // Показываем "Загрузка..." пока получаем данные
-        refCountNumber.textContent = "Загрузка...";
+        // 1. Получаем параметры из URL (адресной строки)
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // 2. Ищем параметр 'count'
+        const countFromUrl = urlParams.get('count');
 
-        try {
-          // Попытка получить через fetch (если есть API endpoint)
-          // Раскомментируйте и настройте, если создадите API endpoint:
-          /*
-          const response = await fetch(`/api/referral-count?user_id=${userId}`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            const data = await response.json();
-            refCountNumber.textContent = data.count || 0;
-            return;
-          }
-          */
-
-          // Альтернативный способ: использование WebApp для отправки запроса боту
-          // Бот должен обработать запрос и вернуть данные через WebApp.answerWebAppQuery
-          // или через другой механизм
-          if (tg && tg.sendData) {
-            // Отправляем запрос боту через WebApp
-            tg.sendData(
-              JSON.stringify({ action: "get_ref_count", user_id: userId })
-            );
-          }
-
-          // Временное решение: показываем 0, пока не настроен API или обработка в боте
-          // TODO: Замените на реальный запрос к API или настройте обработку в боте
-          setTimeout(() => {
+        // 3. Если нашли - показываем, если нет - пишем 0
+        if (countFromUrl) {
+            refCountNumber.textContent = countFromUrl;
+            console.log("Рефералы загружены из ссылки:", countFromUrl);
+        } else {
             refCountNumber.textContent = "0";
-          }, 500);
-        } catch (error) {
-          console.error("Ошибка загрузки количества рефералов:", error);
-          refCountNumber.textContent = "0";
         }
       }
 
@@ -2886,6 +2858,7 @@
       setupFAB();
       setupCopyRefLink();
       setupSupportLinks();
+      document.addEventListener('DOMContentLoaded', loadReferralCount);
     </script>
   </body>
 </html>
