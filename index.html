@@ -1077,139 +1077,6 @@
               style="display: none"
             ></div>
 
-            <!-- Upsell Banner -->
-            <div
-              class="gradient-primary rounded-2xl p-4 text-white shadow-lg relative overflow-hidden"
-            >
-              <div class="relative z-10">
-                <div class="flex items-center gap-2 mb-2">
-                  <span
-                    class="badge bg-white/20 hover:bg-white/30 text-white border-none"
-                    >Акция</span
-                  >
-                </div>
-                <h3 class="font-bold text-lg leading-tight mb-1">
-                  Премиум возможности
-                </h3>
-                <p class="text-white/90 text-sm mb-3">
-                  100+ документов и приоритетная поддержка.
-                </p>
-                <a href="#" data-route="/premium">
-                  <button
-                    class="btn btn-sm bg-white text-primary hover:bg-white/90 font-semibold border-none shadow-sm"
-                  >
-                    Выбрать тариф
-                  </button>
-                </a>
-              </div>
-              <svg
-                class="absolute -right-4 -bottom-4 h-32 w-32 text-white/10 rotate-12"
-                width="128"
-                height="128"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                />
-              </svg>
-            </div>
-
-            <!-- Popular Documents -->
-            <div>
-              <div class="flex justify-between items-center mb-3">
-                <h2 class="font-bold text-lg">Популярное</h2>
-                <a
-                  href="#"
-                  data-route="/templates"
-                  class="text-sm text-primary hover:underline"
-                  >Все</a
-                >
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <a
-                  href="#"
-                  data-route="/create"
-                  class="card hover:shadow-md transition-shadow cursor-pointer border-border/50 bg-card"
-                >
-                  <div class="card-content flex flex-col gap-3">
-                    <div class="flex justify-between items-start">
-                      <span class="text-2xl">📄</span>
-                    </div>
-                    <div>
-                      <h3 class="font-medium text-sm leading-tight">
-                        Договор услуг
-                      </h3>
-                      <span class="text-xs text-muted mt-1 block"
-                        >Создать за 2 мин</span
-                      >
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  data-route="/create"
-                  class="card hover:shadow-md transition-shadow cursor-pointer border-border/50 bg-card"
-                >
-                  <div class="card-content flex flex-col gap-3">
-                    <div class="flex justify-between items-start">
-                      <span class="text-2xl">✅</span>
-                    </div>
-                    <div>
-                      <h3 class="font-medium text-sm leading-tight">
-                        Акт работ
-                      </h3>
-                      <span class="text-xs text-muted mt-1 block"
-                        >Создать за 2 мин</span
-                      >
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  data-route="/create"
-                  class="card hover:shadow-md transition-shadow cursor-pointer border-border/50 bg-card"
-                >
-                  <div class="card-content flex flex-col gap-3">
-                    <div class="flex justify-between items-start">
-                      <span class="text-2xl">💰</span>
-                    </div>
-                    <div>
-                      <h3 class="font-medium text-sm leading-tight">
-                        Счет на оплату
-                      </h3>
-                      <span class="text-xs text-muted mt-1 block"
-                        >Создать за 2 мин</span
-                      >
-                    </div>
-                  </div>
-                </a>
-                <a
-                  href="#"
-                  data-route="/create"
-                  class="card hover:shadow-md transition-shadow cursor-pointer border-border/50 bg-card"
-                >
-                  <div class="card-content flex flex-col gap-3">
-                    <div class="flex justify-between items-start">
-                      <span class="text-2xl">⚖️</span>
-                      <span
-                        class="badge badge-secondary h-5 px-1.5 text-[10px] bg-amber-100 text-amber-700"
-                        >PRO</span
-                      >
-                    </div>
-                    <div>
-                      <h3 class="font-medium text-sm leading-tight">
-                        Претензия
-                      </h3>
-                      <span class="text-xs text-muted mt-1 block"
-                        >Создать за 2 мин</span
-                      >
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
             <!-- Recent History Snippet -->
             <div class="pt-2" id="home-recent-block" style="display: none">
               <h2 class="font-bold text-lg mb-3">Недавние</h2>
@@ -1706,21 +1573,7 @@
                   <div
                     class="flex-1 bg-background border border-border/50 rounded-md px-3 py-2 text-xs font-mono text-muted flex items-center justify-between"
                   >
-                    <span id="ref-link-text">t.me/docgen_bot?start=ref123</span
-                    ><svg
-                      class="h-3 w-3 cursor-pointer hover:text-foreground"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                      <path
-                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                      />
-                    </svg>
+                    <span id="ref-link-text">t.me/docgen_bot?start=ref123</span>
                   </div>
                   <button
                     id="copy-ref-link-btn"
@@ -1734,15 +1587,111 @@
                       fill="none"
                       stroke="currentColor"
                       stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
                     >
-                      <circle cx="18" cy="5" r="3" />
-                      <circle cx="6" cy="12" r="3" />
-                      <circle cx="18" cy="19" r="3" />
-                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                      <rect
+                        x="9"
+                        y="9"
+                        width="13"
+                        height="13"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      ></path>
                     </svg>
                   </button>
                 </div>
+                <p id="ref-count-text" class="text-xs text-muted mt-2">
+                  Приглашено: <span id="ref-count-number">0</span> чел.
+                </p>
+              </div>
+            </div>
+            <div class="card border-border/50">
+              <div class="card-content space-y-3">
+                <a
+                  href="#"
+                  id="support-link"
+                  class="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                >
+                  <svg
+                    class="h-5 w-5 text-primary"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                    <line x1="9" y1="10" x2="15" y2="10"></line>
+                    <line x1="12" y1="7" x2="12" y2="13"></line>
+                  </svg>
+                  <div class="flex-1">
+                    <p class="font-medium text-sm">Связь с поддержкой</p>
+                    <p class="text-xs text-muted">
+                      Напишите нам, если возникли вопросы
+                    </p>
+                  </div>
+                  <svg
+                    class="h-4 w-4 text-muted"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  id="tg-profile-link"
+                  target="_blank"
+                  class="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary/50 transition-colors cursor-pointer"
+                >
+                  <svg
+                    class="h-5 w-5 text-primary"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  <div class="flex-1">
+                    <p class="font-medium text-sm">Telegram профиль</p>
+                    <p class="text-xs text-muted">Наш официальный канал</p>
+                  </div>
+                  <svg
+                    class="h-4 w-4 text-muted"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -2046,6 +1995,56 @@
         if (refLinkText) {
           const refLink = `t.me/${BOT_USERNAME}?start=ref${user.id}`;
           refLinkText.textContent = refLink;
+        }
+
+        // Загружаем количество рефералов
+        loadReferralCount(user.id);
+      }
+
+      // Функция для загрузки количества рефералов
+      async function loadReferralCount(userId) {
+        const refCountNumber = document.getElementById("ref-count-number");
+        if (!refCountNumber) return;
+
+        // Показываем "Загрузка..." пока получаем данные
+        refCountNumber.textContent = "Загрузка...";
+
+        try {
+          // Попытка получить через fetch (если есть API endpoint)
+          // Раскомментируйте и настройте, если создадите API endpoint:
+          /*
+          const response = await fetch(`/api/referral-count?user_id=${userId}`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            refCountNumber.textContent = data.count || 0;
+            return;
+          }
+          */
+
+          // Альтернативный способ: использование WebApp для отправки запроса боту
+          // Бот должен обработать запрос и вернуть данные через WebApp.answerWebAppQuery
+          // или через другой механизм
+          if (tg && tg.sendData) {
+            // Отправляем запрос боту через WebApp
+            tg.sendData(
+              JSON.stringify({ action: "get_ref_count", user_id: userId })
+            );
+          }
+
+          // Временное решение: показываем 0, пока не настроен API или обработка в боте
+          // TODO: Замените на реальный запрос к API или настройте обработку в боте
+          setTimeout(() => {
+            refCountNumber.textContent = "0";
+          }, 500);
+        } catch (error) {
+          console.error("Ошибка загрузки количества рефералов:", error);
+          refCountNumber.textContent = "0";
         }
       }
 
@@ -2829,6 +2828,34 @@
         }
       }
 
+      // Обработчики ссылок поддержки и Telegram профиля
+      function setupSupportLinks() {
+        // Ссылка на поддержку
+        const supportLink = document.getElementById("support-link");
+        if (supportLink) {
+          supportLink.onclick = (e) => {
+            e.preventDefault();
+            // Открываем чат с ботом для поддержки
+            const supportUrl = `https://t.me/klern1`;
+            tg.openTelegramLink(supportUrl);
+          };
+        }
+
+        // Ссылка на Telegram профиль (пользователь сам вставит ссылку)
+        const tgProfileLink = document.getElementById("tg-profile-link");
+        if (tgProfileLink) {
+          // Замените эту ссылку на вашу реальную ссылку на Telegram канал/профиль
+          tgProfileLink.href = "https://t.me/ProDocSystems"; // TODO: Замените на реальную ссылку
+          tgProfileLink.onclick = (e) => {
+            e.preventDefault();
+            const url = tgProfileLink.href;
+            if (url && url !== "#") {
+              tg.openTelegramLink(url);
+            }
+          };
+        }
+      }
+
       // Fallback метод копирования для старых браузеров
       function fallbackCopyTextToClipboard(text) {
         const textArea = document.createElement("textarea");
@@ -2858,6 +2885,7 @@
       setupSearch();
       setupFAB();
       setupCopyRefLink();
+      setupSupportLinks();
     </script>
   </body>
 </html>
